@@ -5,7 +5,7 @@
 | Version | Project             | Note     |
 | ------- | --------            | -------- | 
 | 2.2.2   | SPO Server          | Verification Proof file extension change to `.itm`. |
-|         | Spo Client          | Add IX Authentication to Cmd. |
+|         | SPO Client          | Add IX Authentication to CMD. |
 |         | Verification Server | 1. Improvement of the result table UI. |
 |         |                     | 2. The server now only shows the verify history from your local browser. Other users will not see your verify history anymore, increasing data privacy. |
 
@@ -17,7 +17,7 @@
 
 ### SPO Client
 
-1. 提供Client為Raw Data進行清算上鏈的功能：產生LedgerInput並傳送至SPO Server，並儲存SPO Server回傳的Receipt
+1. 提供SPO Client為Raw Data進行清算上鏈的功能：產生LedgerInput並傳送至SPO Server，並儲存SPO Server回傳的Receipt
 2. 當SPO Server通知已上鏈的Clearance Order，會將對應的Receipt與智能合約上的Clearance Record進行驗證並產生驗證結果
 
 ### SPO Server
@@ -47,6 +47,7 @@
 
 ## SDK 列表
 欲申請以下列表測試開發請[聯絡我們](https://itrustmachines.com/)
-- [itm-spo-sdk-java](https://github.com/itrustmachines/itm-spo-sdk-java)
-- [itm-dashboard](https://github.com/itrustmachines/itm-dashboard)
 - [itm-mcu-porting-kit](https://github.com/itrustmachines/itm-mcu-porting-kit)
+- [itm-spo-sdk-java](https://github.com/itrustmachines/itm-spo-sdk-java)
+- [itm-spo-sdk-android](https://github.com/itrustmachines/itm-spo-sdk-android)
+- [itm-dashboard](https://github.com/itrustmachines/itm-dashboard)
