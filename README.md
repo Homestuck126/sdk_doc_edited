@@ -48,6 +48,20 @@
 ## SDK 列表
 欲申請以下列表測試開發請[聯絡我們](https://itrustmachines.com/)
 - [itm-mcu-porting-kit](https://github.com/itrustmachines/itm-mcu-porting-kit)
+    - 提供Linux C或Azure Sphere的SPO Client範例程式碼
+    - master branches環境需求：Ubuntu 18.04 
+    - azs-spo-c-client & azs-spo-c-client-single-thread branches環境需求：
+        - Azure Sphere SDK
+        - Visual Studio 或 Visual Studio Code 開發環境
+        - Windows 10 作業系統
 - [itm-spo-sdk-java](https://github.com/itrustmachines/itm-spo-sdk-java)
+    - 提供Java環境的SPO Client範例程式碼
+    - 環境需求：Java版本8以上，需安裝 Maven
 - [itm-spo-sdk-android](https://github.com/itrustmachines/itm-spo-sdk-android)
+    - 提供Andriod環境的SPO Client範例程式碼
+    - 環境需求：
+        - Java版本8以上，需安裝 Maven
+        - Android Studio 開發環境
 - [itm-dashboard](https://github.com/itrustmachines/itm-dashboard)
+    - 提供公版Dashboard範例程式碼
+    - 環境需求：Java版本11以上，需安裝 Maven
