@@ -1,65 +1,68 @@
-# ITM SPO SDK Sample 使用手冊
+# ITM SPO SDK Sample User Guide
+
+- [ITM SPO SDK Sample 使用手冊 中文版](./README_zh.md)
 
 ## Release Note
 
 - [ITM SPO SDK Release Note](./doc/ReleaseNote.md)
 
-## SPO Server 系統架構圖(含 Dashboard 公版)
+## SPO Server System Architecture Diagram(include Dashboard public version)
 
-![SPO Server System Architecture Diagram](./doc/SPO-Server-System-Architecture-Diagram.png)
+![SPO Server System Architecture Diagram](./doc/SPO-Server-System-Architecture-Diagram_en.png)
 
-## 架構元件說明
+## Architecture Component Description
 
 ### SPO Client
 
-1. 提供 SPO Client 為 Raw Data 進行清算上鏈的功能：產生 LedgerInput 並傳送至 SPO Server，並儲存 SPO Server 回傳的 Receipt
-2. 當 SPO Server 通知已上鏈的 Clearance Order，會將對應的 Receipt 與智能合約上的 Clearance Record 進行驗證並產生驗證結果
+1. Offer SPO Client to clearance for Raw Data：generates and sends LedgerInput to SPO Server and stores Receipt from SPO Server.
+2. When SPO Server reports chained Clearance Order, it will verify Receipt and Clearance Record from Smart Contract, and generates result afterward.
 
 ### SPO Server
 
-1. 接收 SPO Client 的 LedgerInput 並回傳 Receipt
-2. 累積 LedgerInput 到所設定可上鏈的量再進行清算上鏈，上鏈成功會通知 SPO Client 進行驗證
-3. 根據 Index Value Key 與時間區間進行搜尋，產生 VerificationProof，後續供公開的 [Verification Server](https://verification.itrustmachines.com/) 或自行整合的 [Verification Program](https://github.com/itrustmachines/spo-verification-program) 進行驗證
+1. Receive SPO Client LedgerInput and return Receipt
+2. Clearance LedgerInputs and upload them to Blockchain until it reaches the setting amount. SPO Client will verify when the success message is reported.
+3. Search based on Index Value Key and time interval, generates VerificationProof for the following verification by public [Verification Server](https://verification.itrustmachines.com/) or self-integrate [Verification Program](https://github.com/itrustmachines/spo-verification-program).
 
 ### Dashboard
 
-裝置資料公版，提供以下內容：
-1. 顯示 SPO Client 提供的 Raw Data
-2. 顯示 Raw Data 的稽核狀態與 Etherscan (以太坊區塊鏈瀏覽器) 連結
-3. 取得證據：使用者可在介面中，根據 Index Value Key 與時間區間進行搜尋，Dashboard 會向 SPO Server 索取並產生 VerificationProof
+Public version of Device data provides the following：
 
-- 若開發者想要在 ITM 公版 Dashboard 上呈現上鏈資料，則 CMD 中必須包含 `deviceId` 與 `timestamp` 兩欄位
+1. Display Raw Data offered by SPO Server.
+2. Display audit status of Raw Data and Etherscan(Ethereum Blockchain Browser) link.
+3. Receive Proof：Users can search based on Index Value Key and time interval on interface. Dashboard will ask SPO Server for VerificationProof.
 
+- If developers like to show clearance records on ITM publish version of Dashboard, CMD must contain `deviceId` and `timestamp` fields.
 
 ### Verification Server
 
-- 本服務提供給無整合 [Verification Program](https://github.com/itrustmachines/spo-verification-program) 的使用者的公開線上驗證服務，其包含：證據驗證 (Proof Verification)、原始檔案驗證 (Raw Data Verification)、還原公鑰及位址 (Recovery Key and Address)
+- Provide users who are not intergrating [Verification Program](https://github.com/itrustmachines/spo-verification-program) with public online Verification Server, which include Proof Verification, Raw Data Verification, Recovery Key and Address.
 - Verification Server URL : https://verification.itrustmachines.com/
 
-- 若開發者想要在 ITM 提供的公開驗證服務 [Verification Server](https://verification.itrustmachines.com/) 中使用原始檔案驗證功能，則 CMD 中必須增加 `fileName` 與 `fileHash` 兩欄位
-
+- If developers like to use original file verification function in public [Verification Server](https://verification.itrustmachines.com/) provided by ITM, CMD must add `fileName` and `fileHash` fields.
 
 ### [Verification Program](https://github.com/itrustmachines/spo-verification-program)
 
-1. 驗證 VerificationProof，並取得 Error Report 與 Raw Data
+1. Verify VerificationProof and receive Error Report and Raw Data.
 
-## SDK 列表
-欲申請以下列表測試開發請[聯絡我們](https://itrustmachines.com/)
+## SDK List
+
+To apply the follow list testing development, feel free to [Contact us](https://itrustmachines.com/).
+
 - [itm-mcu-porting-kit](https://github.com/itrustmachines/itm-mcu-porting-kit)
-    - 提供 Linux C 或 Azure Sphere 的 SPO Client 範例程式碼
-    - master branches 環境需求：Ubuntu 18.04 或 Centos 7 以上
-    - azs-spo-c-client & azs-spo-c-client-single-thread branches 環境需求：
-        - Azure Sphere SDK
-        - Visual Studio 或 Visual Studio Code 開發環境
-        - Windows 10 作業系統
+  - Provide Linux C or Azure Sphere SPO Client example code
+  - master branches environment requirements：above Ubuntu 18.04 or Centos 7
+  - azs-spo-c-client & azs-spo-c-client-single-thread branches environment requirements：
+    - Azure Sphere SDK
+    - Visual Studio or Visual Studio Code develop environment
+    - Windows 10 operating system
 - [itm-spo-sdk-java](https://github.com/itrustmachines/itm-spo-sdk-java)
-    - 提供 Java 環境的 SPO Client 範例程式碼
-    - 環境需求：Java 版本 8 以上，需安裝 Maven
+  - Provide Java environment SPO Client example code
+  - Environment requirements：above Java 8, installed Maven
 - [itm-spo-sdk-android](https://github.com/itrustmachines/itm-spo-sdk-android)
-    - 提供 Andriod 環境的 SPO Client 範例程式碼
-    - 環境需求：
-        - Java 版本 8 以上，需安裝 Maven
-        - Android Studio 開發環境
+  - Provide Andriod environment SPO Client example code
+  - Environment requirements：
+    - above Java 8, installed Maven
+    - Android Studio develop environment
 - [itm-dashboard](https://github.com/itrustmachines/itm-dashboard)
-    - 提供公版 Dashboard 範例程式碼
-    - 環境需求：Java 版本 11 以上，需安裝 Maven
+  - Provide publish version of Dashboard example code
+  - Environment requirements：above Java 11, installed Maven
