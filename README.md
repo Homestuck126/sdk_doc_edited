@@ -1,6 +1,6 @@
 # ITM SPO SDK Sample User Guide
 
-- [ITM SPO SDK Sample 使用手冊 中文版](./README_zh.md)
+- [ITM SPO SDK Sample User Guide Traditional Chinese Version](./README_zh.md)
 
 ## Release Note
 
