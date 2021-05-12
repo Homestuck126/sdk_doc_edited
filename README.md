@@ -44,7 +44,7 @@ Public version of Device data provides the following：
 
 1. Verify VerificationProof and receive Error Report and Raw Data.
 
-## SDK List
+## SDK List (Need GitHub authorization)
 
 To apply the follow list testing development, feel free to [Contact us](https://itrustmachines.com/).
 
