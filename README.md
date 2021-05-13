@@ -21,7 +21,7 @@
 
 1. Receive SPO Client LedgerInput and return Receipt
 2. Clearance LedgerInputs and upload them to Blockchain until it reaches the setting amount. SPO Client will verify when the success message is reported.
-3. Search based on Index Value Key and time interval, generates VerificationProof for the following verification by public [Verification Server](https://verification.itrustmachines.com/) or self-integrate [Verification Program](https://github.com/itrustmachines/spo-verification-program).
+3. Search based on Index Value Key and time interval, generates VerificationProof for the following verification by public [Verification Server](https://verification.itrustmachines.com/) or self-integrate [Verification Program].
 
 ### Dashboard
 
@@ -35,12 +35,12 @@ Public version of Device data provides the following：
 
 ### Verification Server
 
-- Provide users who are not intergrating [Verification Program](https://github.com/itrustmachines/spo-verification-program) with public online Verification Server, which include Proof Verification, Raw Data Verification, Recovery Key and Address.
+- Provide users who are not intergrating [Verification Program] with public online Verification Server, which include Proof Verification, Raw Data Verification, Recovery Key and Address.
 - Verification Server URL : https://verification.itrustmachines.com/
 
 - If developers like to use original file verification function in public [Verification Server](https://verification.itrustmachines.com/) provided by ITM, CMD must add `fileName` and `fileHash` fields.
 
-### [Verification Program](https://github.com/itrustmachines/spo-verification-program)
+### [Verification Program]
 
 1. Verify VerificationProof and receive Error Report and Raw Data.
 
