@@ -44,25 +44,25 @@ Public version of Device data provides the following：
 
 1. Verify VerificationProof and receive Error Report and Raw Data.
 
-## SDK List (Need GitHub authorization)
+## SDK List
 
 To apply the follow list testing development, feel free to [Contact us](https://itrustmachines.com/).
 
-- [itm-mcu-porting-kit](https://github.com/itrustmachines/itm-mcu-porting-kit)
+- [itm-mcu-porting-kit](https://github.com/itrustmachines/itm-mcu-porting-kit) (Need GitHub authorization)
   - Provide Linux C or Azure Sphere SPO Client example code
   - master branches environment requirements：above Ubuntu 18.04 or Centos 7
   - azs-spo-c-client & azs-spo-c-client-single-thread branches environment requirements：
     - Azure Sphere SDK
     - Visual Studio or Visual Studio Code develop environment
     - Windows 10 operating system
-- [itm-spo-sdk-java](https://github.com/itrustmachines/itm-spo-sdk-java)
+- [itm-spo-sdk-java](https://github.com/itrustmachines/itm-spo-sdk-java) (Need GitHub authorization)
   - Provide Java environment SPO Client example code
   - Environment requirements：above Java 8, installed Maven
-- [itm-spo-sdk-android](https://github.com/itrustmachines/itm-spo-sdk-android)
+- [itm-spo-sdk-android](https://github.com/itrustmachines/itm-spo-sdk-android) (Need GitHub authorization)
   - Provide Andriod environment SPO Client example code
   - Environment requirements：
     - above Java 8, installed Maven
     - Android Studio develop environment
-- [itm-dashboard](https://github.com/itrustmachines/itm-dashboard)
+- [itm-dashboard](https://github.com/itrustmachines/itm-dashboard) (Need GitHub authorization)
   - Provide publish version of Dashboard example code
   - Environment requirements：above Java 11, installed Maven
