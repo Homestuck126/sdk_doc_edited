@@ -14,35 +14,39 @@
 
 ### SPO Client
 
-1. Offer SPO Client to clearance for Raw Data：generates and sends LedgerInput to SPO Server and stores Receipt from SPO Server.
-2. When SPO Server reports chained Clearance Order, it will verify Receipt and Clearance Record from Smart Contract, and generates result afterward.
+- Generates and sends LedgerInput to SPO Server and stores Receipt from SPO Server.
+When SPO Server reports the chained Clearance Order:
+1. the SPO client will verify receipt by the same clearance order. 
+2. The SPO client will verify clearance record from Smart Contract. 
+3. After both the receipt and clearance Record are checked, generate verify result.
 
 ### SPO Server
 
-1. Receive SPO Client LedgerInput and return Receipt
-2. Clearance LedgerInputs and upload them to Blockchain until it reaches the setting amount. SPO Client will verify when the success message is reported.
-3. Search based on Index Value Key and time interval, generates VerificationProof for the following verification by public [Verification Server](https://verification.itrustmachines.com/) or self-integrate [Verification Program](https://github.com/itrustmachines/spo-verification-program).
+- Receives SPO Client LedgerInput and returns Receipt.
+- Does clearance on LedgerInputs and upload them to Blockchain until it reaches the max amount or too much time passess. 
+- SPO Client will verify when the success message is reported.
+- Search based on Index Value Key and time interval, generates ITM proof token for the following verification by public [Verification Server](https://verification.itrustmachines.com/) or self-integrate [Verification Program](https://github.com/itrustmachines/spo-verification-program).
 
 ### Dashboard
 
 Public version of Device data provides the following：
 
-1. Display Raw Data offered by SPO Server.
-2. Display audit status of Raw Data and Etherscan(Ethereum Blockchain Browser) link.
-3. Receive Proof：Users can search based on Index Value Key and time interval on interface. Dashboard will ask SPO Server for VerificationProof.
+- Display Raw Data offered by SPO Server.
+- Display audit status of Raw Data and Etherscan(Ethereum Blockchain Browser) link.
+- Receive Proof：Users can search based on Index Value Key and time interval on interface. Dashboard will ask SPO Server for ITM proof token.
 
-- If developers like to show clearance records on ITM publish version of Dashboard, CMD must contain `deviceId` and `timestamp` fields.
+- If developers would like to show clearance records on ITM publish version of Dashboard, CMD must contain `deviceId` and `timestamp` fields.
 
 ### Verification Server
 
-- Provide users who are not intergrating [Verification Program](https://github.com/itrustmachines/spo-verification-program) with public online Verification Server, which include Proof Verification, Raw Data Verification, Recovery Key and Address.
+- Provide users who are not intergrating [Verification Program](https://github.com/itrustmachines/spo-verification-program) with a public online Verification Server, which include Proof Verification, Raw Data Verification, the Recovery Key and Attester wallet Address.
 - Verification Server URL : https://verification.itrustmachines.com/
 
-- If developers like to use original file verification function in public [Verification Server](https://verification.itrustmachines.com/) provided by ITM, CMD must add `fileName` and `fileHash` fields.
+- If developers would like to use original file verification function in public [Verification Server](https://verification.itrustmachines.com/) provided by ITM, CMD must add `fileName` and `fileHash` fields.
 
 ### [Verification Program]
 
-1. Verify VerificationProof and receive Error Report and Raw Data.
+- Verify ITM proof token and receive Error Report and Raw Data.
 
 ## SDK List
 
