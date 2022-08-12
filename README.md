@@ -16,7 +16,7 @@
 
 - Generates and sends LedgerInput to SPO Server and stores Receipt from SPO Server.
 When SPO Server reports the chained Clearance Order:
-1. the SPO client will verify receipt by the same Clearance Order. 
+1. The SPO client will verify receipt by the same Clearance Order. 
 2. The SPO client will verify Clearance Record from Smart Contract. 
 3. After both the Receipt and Clearance Record are checked, generate verify result.
 
@@ -31,7 +31,7 @@ self-integrated [Verification Program](https://github.com/itrustmachines/spo-ver
 
 ### Dashboard
 
-The dashboard can provide the following：
+The ITM dashboard can provide the following：
 
 - Display Raw Data offered by SPO Server.
 - Display audit status of Raw Data and Etherscan(Ethereum Blockchain Browser) link.
@@ -41,7 +41,7 @@ The dashboard can provide the following：
 
 ### Verification Server
 
-- Provide users who are not intergrating [Verification Program](https://github.com/itrustmachines/spo-verification-program) with a public online Verification Server, which includes Blockchain Verification, single File Verification, and Attester wallet Address.
+- Provide users who are not intergrating [Verification Program](https://github.com/itrustmachines/spo-verification-program) with a public online Verification Server, which includes Blockchain Verification, single File Verification, and multiple file verification.
 - Verification Server URL : https://verification.itrustmachines.com/
 
 - If developers would like to use original file verification function in the public [Verification Server](https://verification.itrustmachines.com/) provided by ITM, CMD must contain `fileName` and `fileHash` fields.
